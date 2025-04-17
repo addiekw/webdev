@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Joke Generator</title>
+  <style>
+    body {
+      font-family: "Merriweather", serif;
+      background-color: #C4CED4;
+      text-align: center;
+      padding: 50px;
+    }
+    #joke {
+      font-size: 1.5em;
+      margin: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      border: none;
+      background-color: #0C2C56;
+      color: white;
+      cursor: pointer;
+      margin: 10px;
+    }
+    button:hover {
+      background-color: #005C5C;
+    }
+    .back-button {
+      background-color: #0C2C56;
+    }
+    .back-button:hover {
+      background-color: #005C5C;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Random Joke Generator 😂</h1>
+  <div id="joke">Press the button for a joke!</div>
+
+  <button class="back-button" onclick="goBack()">Go Back</button>
+  <button onclick="newJoke()">Get a Joke</button>
+
+  <script>
+    const jokes = [
+  "Why don’t skeletons fight each other? They don’t have the guts.",
+  "I'm reading a book on anti-gravity. It's impossible to put down!",
+  "What do you call fake spaghetti? An impasta!",
+  "Why did the scarecrow win an award? Because he was outstanding in his field.",
+  "I would tell you a construction pun, but I'm still working on it.",
+  "Why did the bicycle fall over? It was two-tired.",
+  "Did you hear about the guy who invented Lifesavers? He made a mint!",
+  "Parallel lines have so much in common. It’s a shame they’ll never meet.",
+  "Why don’t scientists trust atoms? Because they make up everything!",
+  "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+  "What did one wall say to the other wall? 'I’ll meet you at the corner.'",
+  "Why did the math book look sad? Because it had too many problems.",
+  "Why can’t your nose be 12 inches long? Because then it would be a foot.",
+  "I used to play piano by ear, but now I use my hands.",
+  "What do you call a fish with no eyes? Fsh.",
+  "I'm on a seafood diet. I see food and I eat it.",
+  "What’s orange and sounds like a parrot? A carrot!",
+  "Why did the cookie go to the hospital? Because it felt crummy.",
+  "How does a penguin build its house? Igloos it together.",
+  "Why did the golfer bring two pairs of pants? In case he got a hole in one."
+];
+
+    function newJoke() {
+      const randomIndex = Math.floor(Math.random() * jokes.length);
+      document.getElementById('joke').textContent = jokes[randomIndex];
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>
